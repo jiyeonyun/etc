@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/d3a92e2a8f.js" crossorigin="anonymous"></script>
-    <script src="main.js" defer></script>
-    <title>Document</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping</title>
+    <script src="main-delegation.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/9eb162ac0d.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <section class="list">
-        <header class="header">shopping list
-        </header>
-        <ul class="items">
-        </ul>
-        <footer class="footer">
-            <input type="text" class="footer_input">
-            <button class="footer_button">
-                <i class="fas fa-plus"></i>
-            </button>
-        </footer>
+      <header class="header">Shopping List</header>
+      <ul class="items">
+      </ul>
+      <button class="delall"><i class="fas fa-trash-alt"></i></button>
+      <footer class="footer">
+        <input type="text" class="footer__input" placeholder="추가 할 상품을 입력해 주세요" />
+        <button class="footer__button">
+          <i class="fas fa-plus"></i>
+        </button>
+      </footer>
     </section>
-</body>
+  </body>
 </html>
