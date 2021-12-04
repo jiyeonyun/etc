@@ -14,4 +14,8 @@ Event.target을 사용함
 전체 삭제 버튼만듬 <br>
 리스트 아이템 추가시 현재날짜 추가되게 만듬<br><br>
 
+#### 21.12.04 ver.3
+기존에 엔터와 클릭으로 이루어지던 onadd를<br>
+form을사용해 submit되었을때 이벤트를 처리하게 향상시킴
+
 <img src ="https://user-images.githubusercontent.com/94913420/144600774-2651135e-ea47-4d76-b9ab-c98906e41d65.mov">
