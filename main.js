@@ -2,7 +2,13 @@ const items = document.querySelector('.items');
 const input = document.querySelector('.footer__input');
 const addBtn = document.querySelector('.footer__button');
 const alldel = document.querySelector('.delall');
+const form =document.querySelector('.new-form');
 
+form.addEventListener('submit',event =>{
+  event.preventDefault();
+  onAdd()
+  
+});
 
   const time =new Date();
   let year = time.getFullYear();
@@ -42,15 +48,6 @@ function createItem(text) {
   return itemRow;
 }
 
-addBtn.addEventListener('click', () => {
-  onAdd();
-});
-
-input.addEventListener('keypress', event => {
-  if (event.key === 'Enter') {
-    onAdd();
-  }
-});
 
 items.addEventListener('click', event => {
   const id = event.target.dataset.id;

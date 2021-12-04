@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shopping</title>
-    <script src="main-delegation.js" defer></script>
+    <script src="main.js" defer></script>
     <script
       src="https://kit.fontawesome.com/9eb162ac0d.js"
       crossorigin="anonymous"
@@ -18,10 +18,12 @@
       </ul>
       <button class="delall"><i class="fas fa-trash-alt"></i></button>
       <footer class="footer">
-        <input type="text" class="footer__input" placeholder="추가 할 상품을 입력해 주세요" />
-        <button class="footer__button">
+        <form class="new-form">
+          <input type="text" class="footer__input" placeholder="추가 할 상품을 입력해 주세요" />
+          <button type="submit" class="footer__button">
           <i class="fas fa-plus"></i>
         </button>
+        </form>
       </footer>
     </section>
   </body>
