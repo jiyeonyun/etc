@@ -62,15 +62,15 @@ body {
   border-radius: var(--size-border);
 }
 
-.blue {
+.blues {
   background-color: var(--color-blue);
 }
 
-.yellow {
+.yellows {
   background-color: var(--color-yellow);
 }
 
-.pink {
+.pinks {
   background-color: var(--color-pink);
 }
 
@@ -90,7 +90,7 @@ body {
   margin-bottom: var(--base-space);
 }
 
-.item.invisible {
+.invisible {
   background-color: var(--color-white);
   display: none;
 }
