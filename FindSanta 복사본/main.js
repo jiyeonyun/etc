@@ -135,6 +135,7 @@ function initGame() {
   addItem('santa', santa_COUNT, 'img/santa.png');
   addItem('person', person1_COUNT, 'img/person1.png');
   addItem('person2', person2_COUNT, 'img/person2.png');
+  
 }
 
 function onFieldClick(event) {
@@ -173,10 +174,8 @@ function addItem(className, count, imgPath) {
   const y1 = 0;
   const x2 = fieldRect.width - santa_SIZE;
   const y2 = fieldRect.height - santa_SIZE;
-  let stepSize = 4;
-  let stepX = stepSize;
-  let stepY = stepSize;
   let gameId = 0;
+  
   for (let i = 0; i < count; i++){
     const item = document.createElement('img');
     item.setAttribute('class', className);
@@ -186,25 +185,38 @@ function addItem(className, count, imgPath) {
     let y = randomNumber(y1, y2);
     item.style.left = `${x}px`;
     item.style.top = `${y}px`;
-    field.appendChild(item);
-   
-    if(gameId === 0){
-      gameId = setInterval(startMove,20);
-    }
-    function startMove(){
-        x += stepX;
-        y += stepY;
-        if(x>x2){stepX =- stepSize};
-        if(x<0){stepX = stepSize};
-        if(y>y2){stepY =- stepSize};
-        if(y<0){stepY = stepSize};
-        item.style.left =`${x}px`;
-        item.style.top = `${y}px`;
-      }
-      }
-     
-      
+    field.appendChild(item); 
   }
+  if(gameId === 0){
+    gameId = setInterval(startMove('santa',santa_COUNT),20);
+    gameId = setInterval(startMove('person2', person2_COUNT),20);
+    gameId = setInterval(startMove('person', person1_COUNT),20);
+  }
+      }
+      
+      function startMove(className,count){
+        const x2 = fieldRect.width - santa_SIZE;
+        const y2 = fieldRect.height - santa_SIZE;
+        let stepSize = 4;
+        let stepX = stepSize;
+        let stepY = stepSize;
+        let randoms = document.querySelectorAll(`.${className}`);
+        for(let i=0; i<count; i++){
+          let randomX = parseFloat(randoms[i].style.left);
+          let randomY = parseFloat(randoms[i].style.top);
+          console.log( randomY );
+            randomX += stepX;
+            randomY += stepY;
+            if(randomX>x2){stepX =- stepSize};
+            if(randomX<0){stepX = stepSize};
+            if(randomY>y2){stepY =- stepSize};
+            if(randomY<0){stepY = stepSize};
+            randoms[i].style.left =`${randomX}px`;
+            randoms[i].style.top =`${randomY}px`;
+            console.log( randomY );
+        }
+       
+        }
   
 
 
