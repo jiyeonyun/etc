@@ -1,9 +1,9 @@
 'use strict';
 
-const santa_SIZE = 80;
-const santa_COUNT = 5;
-const person1_COUNT = 10;
-const person2_COUNT = 10;
+const santa_SIZE = 100;
+const santa_COUNT = 2;
+const person1_COUNT = 2;
+const person2_COUNT = 2;
 const GAME_DURATION_SEC = 20;
 
 const field = document.querySelector('.game__field');
@@ -23,6 +23,11 @@ const bgSound = new Audio('./sound/bg.mp3');
 const personSound = new Audio('./sound/Cartoon.mp3');
 const winSound = new Audio('./sound/xmas.mp3');
 
+let stepSize = 4;
+let stepX = stepSize;
+let stepY = stepSize;
+const x2 = fieldRect.width - santa_SIZE;
+const y2 = fieldRect.height - santa_SIZE;
 
 let started = false;
 let score = 0;
@@ -176,8 +181,6 @@ function updateScoreBoard() {
 function addItem(className, count, imgPath) {
   const x1 = 0;
   const y1 = 0;
-  const x2 = fieldRect.width - santa_SIZE;
-  const y2 = fieldRect.height - santa_SIZE;
   let gameId=0;
   for (let i = 0; i < count; i++){
     const item = document.createElement('img');
@@ -189,35 +192,25 @@ function addItem(className, count, imgPath) {
     item.style.left = `${x}px`;
     item.style.top = `${y}px`;
     field.appendChild(item); 
-    function startMove(className){
-      const x2 = fieldRect.width - santa_SIZE;
-      const y2 = fieldRect.height - santa_SIZE;
-      let stepSize = 4;
-      let stepX = stepSize;
-      let stepY = stepSize;
-      let randoms = document.querySelectorAll(`.${className}`);
-        let randomX = parseFloat(randoms[i].style.left);
-        let randomY = parseFloat(randoms[i].style.top);
-        console.log( randomY );
-          randomX += stepX;
-          randomY += stepY;
-          if(randomX>x2){stepX =- stepSize};
-          if(randomX<0){stepX = stepSize};
-          if(randomY>y2){stepY =- stepSize};
-          if(randomY<0){stepY = stepSize};
-          randoms[i].style.left =`${randomX}px`;
-          randoms[i].style.top =`${randomY}px`;
-          console.log( randomY );
-      }
-      if(gameId === 0){
-        gameId =setInterval(startMove(className),20);
-      }
-      }
   }
-      
-      
-        
-
+  if(gameId === 0){
+    gameId =setInterval(startMove,20,className);
+  }
+}
+function startMove(className){
+  let randoms = document.querySelectorAll(`.${className}`);
+      let randomX = parseFloat(randoms[0].style.left);
+      let randomY = parseFloat(randoms[0].style.top);
+        randomX += stepX;
+        randomY += stepY;
+        if(randomX>x2){stepX -= stepSize};
+        if(randomX<0){stepX = stepSize};
+        if(randomY>y2){stepY -= stepSize};
+        if(randomY<0){stepY = stepSize};
+        randoms[0].style.left =`${randomX}px`;
+        randoms[0].style.top =`${randomY}px`;
+  
+}    
 
 
 function randomNumber(min, max) {

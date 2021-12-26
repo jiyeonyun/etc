@@ -125,7 +125,7 @@ img{
 img.santa{
   width: 40px;
   z-index: 100;
-  animation: bounce 1s infinite alternate;
+  /* animation: bounce 1s infinite alternate; */
 }
 @keyframes bounce { 100% { top: -5px; } }
  
