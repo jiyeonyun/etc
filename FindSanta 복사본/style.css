@@ -127,10 +127,17 @@ img{
 img.santa{
   width: 40px;
   z-index: 100;
-  /* animation: bounce 1s infinite alternate; */
+
+}
+img.person{
+  animation: bounce 1s infinite alternate;
+}
+img.person2{
+  animation: bounce2 1s infinite alternate;
 }
 @keyframes bounce { 100% { top: -5px; } }
- 
+
+@keyframes bounce2 { 100% { top: 2px; } }
 
 .findSanta{
   border-radius: 20px;

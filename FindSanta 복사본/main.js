@@ -1,9 +1,9 @@
 'use strict';
 
 const santa_SIZE = 100;
-const santa_COUNT = 2;
-const person1_COUNT = 2;
-const person2_COUNT = 2;
+const santa_COUNT = 1;
+const person1_COUNT = 6;
+const person2_COUNT = 8;
 const GAME_DURATION_SEC = 20;
 
 const field = document.querySelector('.game__field');
@@ -29,10 +29,11 @@ let stepY = stepSize;
 const x2 = fieldRect.width - santa_SIZE;
 const y2 = fieldRect.height - santa_SIZE;
 
+let moveKey2 = undefined;
 let started = false;
 let score = 0;
 let timer = undefined;
-
+let gameId=0;
 
 field.addEventListener('click', onFieldClick);
 gameBtn.addEventListener('click', () => {
@@ -55,6 +56,7 @@ function startGame() {
   showTimerAndScore();
   startGameTimer();
   playSound(bgSound);
+  gameId = 0;
   } 
 
 
@@ -140,7 +142,8 @@ function initGame() {
   addItem('santa', santa_COUNT, 'img/santa.png');
   addItem('person', person1_COUNT, 'img/person1.png');
   addItem('person2', person2_COUNT, 'img/person2.png');
-  moveKey();
+  moveKey('santa');
+  // moveKey('person2');
 }
 
 function onFieldClick(event) {
@@ -155,6 +158,8 @@ function onFieldClick(event) {
     updateScoreBoard();
     if (score === santa_COUNT) {
       finishGame(true);
+      gameId =1;
+      moveKey('santa');
     }
   } else if (target.matches('.person')) {
     finishGame(false);
@@ -193,27 +198,38 @@ function addItem(className, count, imgPath) {
     field.appendChild(item); 
   }
 }
-function startMove(){
-  let randoms = document.querySelectorAll('img');
-      console.log(randoms);
-      for(let i = 0; i<randoms.length; i++){
-        let randomX = parseFloat(randoms[i].style.left);
-        let randomY = parseFloat(randoms[i].style.top);
+function startMove(className){
+  let randoms = document.querySelector(`.${className}`);
+        let randomX = parseFloat(randoms.style.left);
+        let randomY = parseFloat(randoms.style.top);
+        console.log(randomX);
+        console.log(randomY);
           randomX += stepX;
           randomY += stepY;
-          if(randomX>=x2){stepX -= stepSize};
+          if(randomX>x2){stepX -= stepSize};
           if(randomX<0){stepX = stepSize};
-          if(randomY>=y2){stepY -= stepSize};
+          if(randomY>y2){stepY -= stepSize};
           if(randomY<0){stepY = stepSize};
-          randoms[i].style.left =`${randomX}px`;
-          randoms[i].style.top =`${randomY}px`;
-      }
+          randoms.style.position = 'absolute';
+          randoms.style.left =`${randomX}px`;
+          randoms.style.top =`${randomY}px`;
 }    
-function moveKey(){
-  let gameId=0;
-  if(gameId === 0){
-    gameId =setInterval(startMove,20);
-  }
+function moveKey(className){
+ 
+  // if(gameId === 0){
+  //   gameId =setInterval(startMove,20,className);
+  // }
+  // else if(gameId === 1){
+  //   clearInterval(gameId)
+  // }
+
+  moveKey2 = setInterval(() => {
+    if (gameId === 1) {
+      clearInterval(moveKey2);
+      return;
+    }
+    startMove(className);
+  }, 20);
 }
 
 
