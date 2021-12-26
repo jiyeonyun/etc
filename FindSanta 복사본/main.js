@@ -140,7 +140,7 @@ function initGame() {
   addItem('santa', santa_COUNT, 'img/santa.png');
   addItem('person', person1_COUNT, 'img/person1.png');
   addItem('person2', person2_COUNT, 'img/person2.png');
-  
+  moveKey();
 }
 
 function onFieldClick(event) {
@@ -181,7 +181,6 @@ function updateScoreBoard() {
 function addItem(className, count, imgPath) {
   const x1 = 0;
   const y1 = 0;
-  let gameId=0;
   for (let i = 0; i < count; i++){
     const item = document.createElement('img');
     item.setAttribute('class', className);
@@ -193,24 +192,29 @@ function addItem(className, count, imgPath) {
     item.style.top = `${y}px`;
     field.appendChild(item); 
   }
+}
+function startMove(){
+  let randoms = document.querySelectorAll('img');
+      console.log(randoms);
+      for(let i = 0; i<randoms.length; i++){
+        let randomX = parseFloat(randoms[i].style.left);
+        let randomY = parseFloat(randoms[i].style.top);
+          randomX += stepX;
+          randomY += stepY;
+          if(randomX>=x2){stepX -= stepSize};
+          if(randomX<0){stepX = stepSize};
+          if(randomY>=y2){stepY -= stepSize};
+          if(randomY<0){stepY = stepSize};
+          randoms[i].style.left =`${randomX}px`;
+          randoms[i].style.top =`${randomY}px`;
+      }
+}    
+function moveKey(){
+  let gameId=0;
   if(gameId === 0){
-    gameId =setInterval(startMove,20,className);
+    gameId =setInterval(startMove,20);
   }
 }
-function startMove(className){
-  let randoms = document.querySelectorAll(`.${className}`);
-      let randomX = parseFloat(randoms[0].style.left);
-      let randomY = parseFloat(randoms[0].style.top);
-        randomX += stepX;
-        randomY += stepY;
-        if(randomX>x2){stepX -= stepSize};
-        if(randomX<0){stepX = stepSize};
-        if(randomY>y2){stepY -= stepSize};
-        if(randomY<0){stepY = stepSize};
-        randoms[0].style.left =`${randomX}px`;
-        randoms[0].style.top =`${randomY}px`;
-  
-}    
 
 
 function randomNumber(min, max) {

@@ -16,7 +16,7 @@ button {
 .game {
   display: flex;
   flex-direction: column;
-  position: relative;
+  /* position: relative; */
   border-radius: 20px;
   width: 800px;
   height: 500px;
@@ -29,7 +29,9 @@ header {
   text-align: center;
   padding: 8px;
 }
-
+img{
+  position: absolute;
+}
 .game__button {
   width: 60px;
   height: 60px;
@@ -70,10 +72,10 @@ header {
 
 .game__field {
   position: relative;
-  width: 100%;
-  height: 100%;
+  width: 800px;
+  height: 255px;
   margin-top: 40px;
-}
+} 
 
 .pop-up {
   border-radius: 20px;
@@ -141,6 +143,10 @@ img.santa{
   font-family:sans-serif;
   z-index: 150;
   position: relative;
+  background-image: url(./img/santa.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 .findSanta div{
   display: flex;
@@ -148,11 +154,8 @@ img.santa{
   justify-content: center;
   align-items: center;
 }
-.findSanta img{
-  width: 200px;
-  border-radius: 50%;
-  border: 4px solid rgb(172, 0, 0);
-}
+
 .findSanta .pop-up_santa_message{
   font-size: 18px;
+ 
 }
