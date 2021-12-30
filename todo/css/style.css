@@ -8,11 +8,10 @@ body{
     height : 100vh;
     color: #fff;
 }
-.wrapping{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+header{
+width: 100%;
+display: flex;
+justify-content: flex-end;
 }
 form{
     width: 400px;
@@ -42,8 +41,6 @@ button{
     padding: 8px;
     border-radius: 6px;
 }
-li{
-}
 li span{
     font-size: 20px;
     margin-right: 20px;
@@ -72,4 +69,22 @@ li button{
 #list{
     margin-top: 10px;
     margin-bottom: 10px;
+}
+#log-out{
+    margin-right: 30px;
+}
+#todo-list{
+    max-height: 200px;
+    width: 300px;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+#todo-list::-webkit-scrollbar{
+    display: none;
+}
+.wrapping{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
