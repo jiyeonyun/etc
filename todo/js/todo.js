@@ -6,6 +6,7 @@ const TODOS_KEY = 'todos';
 
 let toDos = [];
 
+
 function saveToDos(){
     localStorage.setItem(TODOS_KEY,JSON.stringify(toDos));
 }
@@ -19,6 +20,7 @@ function deleteTodo(event){
 
 function paintToDo(newTodo){
     const li = document.createElement('li');
+    li.setAttribute('class','list');
     li.id = newTodo.id;
     const span = document.createElement('span');
     span.innerText = newTodo.text;
@@ -28,6 +30,7 @@ function paintToDo(newTodo){
     li.appendChild(span);
     li.appendChild(button);
     toDoList.appendChild(li);
+    li.scrollIntoView({ block: 'center' });
 }
 
 
