@@ -17,7 +17,8 @@
 1. data.json을 사용해 아이템을 받아옴
 2. 각각의 버튼별로 정렬해줌
 3. 가장 위에 버튼 누를시 초기화 시켜줌
-<img src="https://user-images.githubusercontent.com/94913420/147404334-2f0dc847-8e0f-4c81-8acb-b5443005a022.gif" width="400" height="300">
+<img src="https://user-images.githubusercontent.com/94913420/147732005-21c41ec4-063b-46b6-8ba4-2eb24fb2e069.gif" width="300" height="450">
+
 ------------------------------------------------------------------------------
 
 #  3.Todo ☑️
