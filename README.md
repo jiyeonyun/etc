@@ -29,5 +29,5 @@
 4. 날씨 api를 사용해 현재위치의 날씨를 알려줌
 5. 로그아웃시 로컬스토리지의 내용삭제
 6. 투두리스트의 스크롤바 생성
-<img src="https://user-images.githubusercontent.com/94913420/147404334-2f0dc847-8e0f-4c81-8acb-b5443005a022.gif" width="400" height="300">
+<img src="https://user-images.githubusercontent.com/94913420/147732828-51a71e2f-d5d9-4f2b-9750-581fdfd69a2e.gif" width="400" height="450">
 ------------------------------------------------------------------------------
