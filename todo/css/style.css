@@ -5,4 +5,71 @@ body{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    height : 100vh;
+    color: #fff;
+}
+.wrapping{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+form{
+    width: 400px;
+    margin-bottom: 20px;
+}
+input{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: #fff;
+    width: 300px;
+    cursor: pointer;
+    font-size: 20px;
+    border-bottom: 1px solid #fff;
+}
+input::placeholder {
+    color: #fff;
+    font-size: 20px;
+}
+button{
+    background-color: transparent;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 20px;
+    border: 1px solid #fff;
+    padding: 8px;
+    border-radius: 6px;
+}
+li{
+}
+li span{
+    font-size: 20px;
+    margin-right: 20px;
+    font-weight: bold;
+}
+li button{
+    border:none;
+
+}
+#clock{
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+#weather{
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+#greeting {
+    font-size: 48px;
+    margin-bottom: 30px;
+    
+}
+#quote{
+    font-style: italic;
+}
+#list{
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
