@@ -9,18 +9,22 @@
     <title>momentum</title>
 </head>
 <body>
+    <header>
+        <button id="log-out">Log Out</button>
+    </header>
     <div class="wrapping">
     <h2 id="clock">00:00:00</h2>
     <div id="weather">
-        <span></span>
-        <span></span>
+        <span class="weatherContainer"></span>
+        <span class="city"></span>
+        <span class="temp"></span>
     </div>
     <form id="login-form" class="hidden">
         <input type="text" placeholder="what is your name?"/>
         <button>Log In</button>
     </form>
     <h1 id="greeting" class="hidden"></h1>
-    <form id="todo-form">
+    <form id="todo-form" class="hidden">
         <input type="text" placeholder="Write To Do and Press Enter" required/>
         <button>Add Todo</button>
     </form>
