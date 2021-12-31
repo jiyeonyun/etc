@@ -30,3 +30,10 @@ $mainColor :#ff0000;
     background-color: rgb(240, 89, 51);
 }
 
+.wow-enter{
+    opacity: 0;
+}
+.wow-enter-active{
+    opacity: 1;
+    transition: all 500ms;
+}

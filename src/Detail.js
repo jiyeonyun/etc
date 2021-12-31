@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useHistory,useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import './Detail.scss';
+import {Navbar,Container,Nav,Button} from 'react-bootstrap';
+import {CSSTransition} from 'react-transition-group';
+import { connect } from 'react-redux';
 
 let 박스 = styled.div`
 padding :20px;
@@ -21,12 +24,14 @@ function Detail(props){
     return ()=>{clearTimeout(타이머)}
     // }
   },[]);
-   
     let history =useHistory();
     let{ id } = useParams();
     let 찾은상품 = props.shoes.find(function(상품){
         return 상품.id == id
     });
+
+    let [tab,tabSet] = useState(0);
+    let [스위치,스위치변경]=useState(false);
     return(
       <div className="container">
         <박스>
@@ -49,13 +54,60 @@ function Detail(props){
           <h4 className="pt-5">{찾은상품.title}</h4>
           <p>{찾은상품.content}</p>
           <p>{찾은상품.price}</p>
-          <button className="btn btn-danger">주문하기</button> 
+          <Info 재고={props.재고}></Info>
+
+          <button className="btn btn-danger" onClick={()=>{
+            props.재고변경([9,10,11]);
+            props.dispatch({type:'항목추가', payload :{id:찾은상품.id,name:찾은상품.title,quan:1}});
+            history.push('/cart')
+          }}>주문하기</button> 
           <button className="btn btn-danger" onClick={()=>{history.goBack();}}>뒤로가기</button> 
         </div>
       </div>
+      <Nav className='mt-5' variant="tabs" defaultActiveKey="link-0">
+  <Nav.Item>
+    <Nav.Link eventKey="link-0" onClick={()=>{스위치변경(false);tabSet(0)}}>Active</Nav.Link>
+  </Nav.Item>
+  <Nav.Item>
+    <Nav.Link eventKey="link-1" onClick={()=>{스위치변경(false);tabSet(1)}}>Option 2</Nav.Link>
+  </Nav.Item>
+</Nav>
+  <CSSTransition in={스위치} classNames="wow" timeout={500}>
+  <TabContent tab = {tab} 스위치변경={스위치변경}/>
+  </CSSTransition>
   </div> 
     )
   }
 
+function TabContent(props){
+  useEffect(()=>{
+    props.스위치변경(true);
+  });
+  if(props.tab === 0){
+   return <div>0번째 내용입니다</div>
+  }
+  else if(props.tab === 1){
+    return <div>1번째 내용입니다</div>
+  }
+  else{
+    return <div>2번째 내용입니다</div>
+  }
+    
+}
 
-  export default Detail;
+function Info(props){
+  return(
+<p>재고: {props.재고[0]}</p>
+  )
+}
+
+
+function state를props화(state){
+  return {
+      state : state.reducer,
+      alert열렸니 :state.reducer2
+  }
+}
+
+export default connect(state를props화)(Detail);
+  // export default Detail;
