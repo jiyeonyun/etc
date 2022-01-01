@@ -17,7 +17,8 @@
 1. data.json을 사용해 아이템을 받아옴
 2. 각각의 버튼별로 정렬해줌
 3. 가장 위에 버튼 누를시 초기화 시켜줌
-<img src="https://user-images.githubusercontent.com/94913420/147404334-2f0dc847-8e0f-4c81-8acb-b5443005a022.gif" width="400" height="300">
+<img src="https://user-images.githubusercontent.com/94913420/147732005-21c41ec4-063b-46b6-8ba4-2eb24fb2e069.gif" width="300" height="450">
+
 ------------------------------------------------------------------------------
 
 #  3.Todo ☑️
@@ -28,5 +29,5 @@
 4. 날씨 api를 사용해 현재위치의 날씨를 알려줌
 5. 로그아웃시 로컬스토리지의 내용삭제
 6. 투두리스트의 스크롤바 생성
-<img src="https://user-images.githubusercontent.com/94913420/147404334-2f0dc847-8e0f-4c81-8acb-b5443005a022.gif" width="400" height="300">
+<img src="https://user-images.githubusercontent.com/94913420/147733169-7b566a29-8ede-4abc-b736-377d4311fb24.gif">
 ------------------------------------------------------------------------------
