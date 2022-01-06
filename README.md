@@ -42,6 +42,9 @@
 <img src="https://user-images.githubusercontent.com/94913420/148005039-4d7473f9-1935-4074-b53a-d0cf6fe4a5a9.gif" width="300" height="450">
 --------------------------------------------------------------------------------
 
-# 5.
+# 5.쇼핑몰 on React
+1. 데이터 받아와서 상품정렬
+2. 상세페이지+최근본 상품 알려줌
+3. 장바구니 기능에 수량 증가 감소
 
-https://user-images.githubusercontent.com/94913420/148353016-62746b64-56dc-4edf-bd3f-7ee08466e14f.gif
+<img src="https://user-images.githubusercontent.com/94913420/148353016-62746b64-56dc-4edf-bd3f-7ee08466e14f.gif" width="300" height="450">
