@@ -16,7 +16,7 @@ function App() {
   
   let [shoes,shoesSet] = useState(products);
   let [재고,재고변경] = useState([10,11,12]);
-
+  
   return (
     <div className="App">
     <Navbar bg="dark" variant="dark">
@@ -106,12 +106,14 @@ function ProductDiv(props){
   return(
     props.shoes.map(function(i,n){
       return(
-        <div className='col-md-4' onClick={()=>{history.push('/detail/'+n+1)}}>
+        
+        <div className='col-md-4' onClick={()=>{history.push('/detail/'+n)}}>
           <img src={`https://codingapple1.github.io/shop/shoes${n+1}.jpg`} width="100%"></img>
           <h4>{props.shoes[n].title}</h4>
           <p>{props.shoes[n].price}<br/>{props.shoes[n].content}</p>
           {재고[n]}
         </div>
+       
       )
     })
       
