@@ -1,0 +1,45 @@
+$mainColor :#ff0000;
+.red{
+    color :$mainColor;
+}
+
+// div.container{
+//     h4{
+//         color:blue;
+//     }
+//     p{
+//         color: green;
+//     }
+// }
+@mixin 함수() {
+    background-color: rgba(240, 95, 95, 0.297);
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+}
+.my-alert p{
+    margin: 0
+}
+.my-alert{
+    @include 함수()
+}
+.my-alert2{
+    @extend .my-alert;
+    background-color: rgb(240, 89, 51);
+}
+
+.wow-enter{
+    opacity: 0;
+}
+.wow-enter-active{
+    opacity: 1;
+    transition: all 500ms;
+}
+.wrapRecent{
+    margin-top: 40px;
+}
+.colwrap{
+    display: flex;
+}
