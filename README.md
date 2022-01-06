@@ -31,3 +31,12 @@
 6. 투두리스트의 스크롤바 생성
 <img src="https://user-images.githubusercontent.com/94913420/147733169-7b566a29-8ede-4abc-b736-377d4311fb24.gif">
 ------------------------------------------------------------------------------
+
+# 4.그림판 on JS 🎨
+**그림판 어플입니다.**
+1. 캔버스 설정 
+2. 색상변경가능
+3. MODE버튼을 사용해 Fill모드와 Paint모드로 변경가능 
+4. range를 사용해 브러수 크기 조절가능
+5. Save버튼을 사용해 생성한 그림을 png파일로 저장할수있음
+<img src="https://user-images.githubusercontent.com/94913420/148005039-4d7473f9-1935-4074-b53a-d0cf6fe4a5a9.gif" width="300" height="450">
