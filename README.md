@@ -40,3 +40,8 @@
 4. range를 사용해 브러수 크기 조절가능
 5. Save버튼을 사용해 생성한 그림을 png파일로 저장할수있음
 <img src="https://user-images.githubusercontent.com/94913420/148005039-4d7473f9-1935-4074-b53a-d0cf6fe4a5a9.gif" width="300" height="450">
+--------------------------------------------------------------------------------
+
+# 5.
+
+https://user-images.githubusercontent.com/94913420/148353016-62746b64-56dc-4edf-bd3f-7ee08466e14f.gif
