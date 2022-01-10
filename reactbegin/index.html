@@ -7,14 +7,24 @@
     <title>Document</title>
 </head>
 <body>
-
+    <div id='root'></div>
 </body>
 <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
 <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
-<script>
-    const root = React.getElementById('root');
-    const Title = ()=>( <h3 id='title' onMouseEnter={()=>console.log('mouseEnter')}>Hello I'm title</h3>);
-    const Button = ()=>(<button style={{backgroundColor:'tomato'}} onClick={()=>console.log('im clicked')}>Click Me</button>);
-    const Container = <div><Title /><Button /></div>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+    const root = document.getElementById('root');
+    let counter = 0;
+    function countUp(){
+        counter = counter + 1;
+        ReactDOM.render(<Container />,root);
+    }
+    const Container = () =>(
+        <div>
+            <h3>Total Clicks: {counter} </h3>
+            <button onClick={countUp}>Click me</button>    
+        </div>
+    );
+    ReactDOM.render(<Container />,root);
 </script>
 </html>
