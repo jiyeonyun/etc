@@ -30,8 +30,8 @@
         return (
             <div>
                 <div>
-                    <h3>MinutesToHousrs</h3>
-                    <label htmlFor = 'minutes'>Minutes</label>
+                    <h3>Minutes&Housrs ⏰</h3>
+                    <label htmlFor = 'minutes'>분</label>
                     <input 
                     value={inverted ? amount * 60 : amount}
                     id = 'minutes' 
@@ -43,7 +43,7 @@
                     <h4>you want Convert {amount}</h4>
                 </div>
                 <div>
-                    <label htmlFor = 'hours'>Hours</label>
+                    <label htmlFor = 'hours'>시간</label>
                     <input 
                     value={inverted ? amount : Math.round(amount/60)} 
                     id ='hours' 
@@ -58,9 +58,49 @@
         </div>
         );
     }
-    function KmToMiles(){
-        return(
-            <h3>Km 2 M</h3>
+    function CeToFa(){
+        const [amount,setAmount] = React.useState(0);
+        const [inverted,setInverted] = React.useState(false);
+        const onChange = (event)=>{
+            setAmount(event.target.value);
+        }; 
+        const reset = ()=>{
+            setAmount(0);
+        }
+        const onFlip = ()=>{ 
+            reset();
+            setInverted((current)=>!current);
+
+        }
+        return (
+            <div>
+                <div>
+                    <h3>Celsius&Fahrenheit 🌡</h3>
+                    <label htmlFor = 'Celsius'>섭씨</label>
+                    <input 
+                    value={inverted ? Math.round((amount-32)*5/9) : amount}
+                    id = 'Celsius' 
+                    placeholder = 'Celsius' 
+                    type = 'number'
+                    onChange={onChange}
+                    disabled={inverted === true}
+                    />
+                    <h4>you want Convert {amount}</h4> 
+                </div>
+                <div>
+                    <label htmlFor = 'Fahrenheit'>화씨</label>
+                    <input 
+                    value={inverted ? amount : Math.round((amount * 9/5)+32)} 
+                    id ='Fahrenheit' 
+                    placeholder = 'Fahrenheit' 
+                    type = 'number' 
+                    disabled={inverted === false}
+                    onChange={onChange}
+                    />
+                </div>
+                <button onClick = {reset}>Reset</button>
+                <button onClick = {onFlip}>{inverted? "Turn back":"Invert"}</button>
+        </div>
         )
     }
     function App(){
@@ -70,16 +110,16 @@
         };
         return(
             <div>
-            <h1>Super Converter</h1>
+            <h1>단위변환기 📐</h1>
                 <select value ={index} onChange = {onSelect}>
-                    <option value='xx'>Select your units</option>
-                    <option value ='0'>MinutesToHousrs</option>    
-                    <option value ='1'>KmToMiles</option>    
+                    <option value='xx'>변환 단위 선택</option>
+                    <option value ='0'>시간</option>    
+                    <option value ='1'>온도</option>    
                 </select>
                 <hr />
-                {index === 'xx' ? 'Please Select your units': null }
+                {index === 'xx' ? '변환하고 싶은 단위를 선택해 주세요': null }
                 {index === '0' ? <MinutesToHousrs />: null }
-                {index === '1' ? <KmToMiles />: null }
+                {index === '1' ? <CeToFa />: null }
             </div>
         )
     }
