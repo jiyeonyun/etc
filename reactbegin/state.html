@@ -64,7 +64,7 @@
         )
     }
     function App(){
-        const [index,Setindex] = React.useState(0);
+        const [index,Setindex] = React.useState('xx');
         const onSelect = (event) =>{
             Setindex(event.target.value);
         };
@@ -72,6 +72,7 @@
             <div>
             <h1>Super Converter</h1>
                 <select value ={index} onChange = {onSelect}>
+                    <option value='xx'>Select your units</option>
                     <option value ='0'>MinutesToHousrs</option>    
                     <option value ='1'>KmToMiles</option>    
                 </select>
