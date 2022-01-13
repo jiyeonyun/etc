@@ -30,6 +30,7 @@
         return (
             <div>
                 <div>
+                    <h3>MinutesToHousrs</h3>
                     <label htmlFor = 'minutes'>Minutes</label>
                     <input 
                     value={inverted ? amount * 60 : amount}
@@ -63,11 +64,20 @@
         )
     }
     function App(){
+        const [index,Setindex] = React.useState(0);
+        const onSelect = (event) =>{
+            Setindex(event.target.value);
+        };
         return(
             <div>
             <h1>Super Converter</h1>
-            <MinutesToHousrs />
-            <KmToMiles />
+                <select value ={index} onChange = {onSelect}>
+                    <option value ='0'>MinutesToHousrs</option>    
+                    <option value ='1'>KmToMiles</option>    
+                </select>
+                <hr />
+                {index === '0' ? <MinutesToHousrs />: null }
+                {index === '1' ? <KmToMiles />: null }
             </div>
         )
     }
