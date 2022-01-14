@@ -13,17 +13,21 @@
 <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <script type="text/babel">
-    function SaveBtn(){
-        return <button>Save Change</button>
-    }
-    function ConfirmBtn(){
-        return <button>Confirm button</button>
+    function Btn(props){
+        return <button style={{
+            backgroundColor : 'tomato',
+            color : 'white',
+            padding :"10px 20px",
+            border : 0,
+            borderRadius : 10,
+            fontSize: props.big? 18:16,
+        }}>{props.text}</button>
     }
     function App(){
         return (
             <div>   
-                <SaveBtn />
-                <ConfirmBtn />
+                <Btn text="Save Changes" big={true}/>
+                <Btn text="Continue" big={false}/>
             </div>
         );
     }
