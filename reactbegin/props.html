@@ -12,8 +12,9 @@
 <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
 <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script src="https://unpkg.com/react@17.0.2/umd/react.development.js "></script>
 <script type="text/babel">
-    function Btn({text,changeValue}){
+    function Btn({text,changeValue,fontSize}){
         return (
             <button
             onClick={changeValue} 
@@ -23,17 +24,21 @@
             padding :"10px 20px",
             border : 0,
             borderRadius : 10,
+            fontSize : fontSize,
         }}>{text}</button>
         );
     }
-    const MemorizeBtn = React.memo(Btn);
+    // Btn.PropTypes = {
+    //     text : PropTypes.string,
+    //     fontSize : PropTypes.number,
+    // };
     function App(){
         const [value,setValue] = React.useState('save Change');
         const changeValue = ()=> setValue('Revert Changes');
         return (
             <div>   
-                <MemorizeBtn text={value} changeValue={changeValue} />
-                <MemorizeBtn text="Continue" />
+                <Btn text={value} changeValue={changeValue} fontSize = {18}/>
+                <Btn text="Continue" />
             </div>
         );
     }
