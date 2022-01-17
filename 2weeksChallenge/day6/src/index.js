@@ -14,7 +14,7 @@ function RandomNumGame(event){
     let randNum = randomNum(0,GenerateNum.value);    
     NumberResult.innerHTML = `You chose : ${GuessNum.value} , the machine chose: ${randNum}`
         if(randNum == GuessNum.value){
-            GameResult.innerText = 'you win!';
+            GameResult.innerText = 'you won!';
         }
         else{
             GameResult.innerText = 'you lose!';
