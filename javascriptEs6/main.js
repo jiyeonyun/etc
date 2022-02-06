@@ -35,3 +35,27 @@ var 사람 = {
 }
 
     자료.전부더하기();
+
+
+// var pants = 20;
+// var socks = 100;
+// `바지${pants} 양말${socks}`;
+
+// function 해체분석기(문자,변수,변수2){
+//   console.log(문자[1]+변수+문자[0]+변수2);
+// };
+// 해체분석기`바지${pants} 양말${socks}`; 
+
+var pants = 0;
+var socks = 100;
+`바지${pants} 양말${socks}`;
+
+  function 해체분석기(문자,변수,변수2){
+    if(pants == 0){
+      console.log(문자[0]+'다팔렸어요'+문자[1]+변수2);
+    }
+    else{
+      console.log(문자[0]+변수+문자[1]+변수2);
+    }
+  };
+  해체분석기`바지${pants} 양말${socks}`;
