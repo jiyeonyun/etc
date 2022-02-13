@@ -24,13 +24,14 @@ class Habits extends Component {
     };
 
     handleDelete = (habit) => {
-        const habits = [...this.state.habits];
-        const index = habits.indexOf(habit);
-        for(let i = 0; i < habits.length; i++) {
-            if(i === index)  {
-                habits.splice(i, 1);
-            }
-        }
+        // const habits = [...this.state.habits];
+        // const index = habits.indexOf(habit);
+        // for(let i = 0; i < habits.length; i++) {
+        //     if(i === index)  {
+        //         habits.splice(i, 1);
+        //     }
+        // }
+        const habits = this.state.habits.filter(item => item.id !== habit.id);
         this.setState({ habits });
     };
 
