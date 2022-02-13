@@ -9,7 +9,6 @@ class HabitAddForm extends Component {
         name && this.props.onAdd(name);
         this.inputRef.current.value = '';
     }
-
     render() {
         return (
                 <form className='addForm' onSubmit={this.onSubmit}>

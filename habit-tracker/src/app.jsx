@@ -38,6 +38,13 @@ class App extends Component {
         habits.push({id:Date.now() ,name : name , count : 0})
         this.setState({habits});
       }
+
+      handleReset = (habit) =>{
+        const habits = [...this.state.habits];
+        habits.splice(0,habits.length);
+        this.setState({habits});
+      }
+      
   render() {
     return (
       <>
@@ -50,6 +57,7 @@ class App extends Component {
         onDecrement={this.handleDecrement} 
         onDelete={this.handleDelete}
         onAdd={this.handleAdd}
+        onReset={this.handleReset}
         />
       </>
     );
