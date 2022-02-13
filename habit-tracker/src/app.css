@@ -99,3 +99,11 @@ header{
   font-size: 2rem;
   color: gray;
 }
+.resetBtn{
+  padding: 0.3em 0.5em;
+  height: 100%;
+  font-size: 1.5rem;
+  color: #fff;
+  background-color: rgb(34, 91, 34);
+  margin-left: 2.6rem;
+}
