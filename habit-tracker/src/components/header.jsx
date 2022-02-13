@@ -5,9 +5,9 @@ class Header extends Component {
     render() {
         return (
             <header>
-                <span className='logo'><i className="fa-solid fa-leaf"></i></span>
+                <i className="logo fa-solid fa-leaf"></i>
                 <h1>Habit Tracker</h1>
-                <span className='habit-count'>0</span>
+                <span className='navbar-count'>{this.props.totalCount}</span>
             </header>
         );
     }
