@@ -21,11 +21,17 @@ class Habits extends Component {
         const count = habits[index].count - 1;
         habits[index].count = count < 0 ? 0 : count;
         this.setState({ habits });
-        
     };
 
     handleDelete = (habit) => {
-        console.log(`핸들딜레이트${habit.name}`)
+        const habits = [...this.state.habits];
+        const index = habits.indexOf(habit);
+        for(let i = 0; i < habits.length; i++) {
+            if(i === index)  {
+                habits.splice(i, 1);
+            }
+        }
+        this.setState({ habits });
     };
 
     render() {
