@@ -3,10 +3,6 @@ import Habit from './habit';
 import HabitAddForm from './habitAddForm'
 
 class Habits extends Component {
-    componentDidUpdate(){
-        //
-    }
-
     handleIncrement = (habit) => {
         this.props.onIncrement(habit);
     }
