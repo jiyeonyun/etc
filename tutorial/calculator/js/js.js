@@ -8,7 +8,8 @@ let operatorForAdvanced = '';
 let previousKey = '';
 let previousNum = '';
 
-
+ac.addEventListener('click',allClear);
+enter.addEventListener('click',Enter);
 
 function allClear(){
     resultNum.innerHTML = '0';
@@ -33,7 +34,15 @@ numbers.addEventListener('click',function(e){
             firstNum = resultNum.innerHTML
         }
         else{//둘다 아닐때
-
+            if(previousKey === operatorForAdvanced ){
+                resultNum.innerHTML = buttonContent;
+                previousKey = resultNum.innerHTML
+                previousNum = resultNum.innerHTML;
+            }
+            else{
+            resultNum.innerHTML = resultNum.innerHTML + buttonContent;
+            previousNum = resultNum.innerHTML;
+            }
         }
     }
     if(action === 'operator'){
@@ -42,7 +51,6 @@ numbers.addEventListener('click',function(e){
     }
 
 });
-
 
 function calculate(n1, operator, n2) {
     let result = 0;
@@ -58,5 +66,10 @@ function calculate(n1, operator, n2) {
     if(operator === '/') {
        result = Number(n1) / Number(n2); // '/'버튼을 눌렀을 때
     }
-    return String(result);
+    resultNum.innerHTML = result
+    
     }
+
+function Enter(){
+    calculate(firstNum,operatorForAdvanced,previousNum);
+}
