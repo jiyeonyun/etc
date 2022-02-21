@@ -7,11 +7,12 @@ let firstNum = '';
 let operatorForAdvanced = '';
 let previousKey = '';
 let previousNum = '';
-
+let arr = [];
 ac.addEventListener('click',allClear);
 enter.addEventListener('click',Enter);
 
 function allClear(){
+    arr = [];
     resultNum.innerHTML = '0';
     firstNum = '';
     previousNum = '';
@@ -20,21 +21,28 @@ function allClear(){
 }
 
 numbers.addEventListener('click',function(e){
-    const action = e.target.className; 
+    const action = e.target.className;
+    const demical = e.target.idName;
     const buttonContent = e.target.textContent; 
-    console.log(action);
-    console.log(buttonContent);
     if(action === 'number'){
         if(resultNum.innerHTML === '0' && operatorForAdvanced === ''){
             resultNum.innerHTML = buttonContent;
             firstNum = resultNum.innerHTML
         }
         else if(resultNum.innerHTML !== '0' && operatorForAdvanced === ''){
-            resultNum.innerHTML = resultNum.innerHTML + buttonContent;
-            firstNum = resultNum.innerHTML
+            if(demical === 'demical'){
+                resultNum.innerHTML = resultNum.innerHTML +'.'+ buttonContent;
+                firstNum = resultNum.innerHTML; 
+            }
+            else{
+                resultNum.innerHTML = resultNum.innerHTML + buttonContent;
+                firstNum = resultNum.innerHTML;
+            }
         }
         else{//둘다 아닐때
             if(previousKey === operatorForAdvanced ){
+                arr.push(firstNum);
+                console.log(arr);
                 resultNum.innerHTML = buttonContent;
                 previousKey = resultNum.innerHTML
                 previousNum = resultNum.innerHTML;
@@ -56,20 +64,29 @@ function calculate(n1, operator, n2) {
     let result = 0;
     if(operator === '+') {
       result = Number(n1) + Number(n2); // '+'버튼을 눌렀을 때
+        arr = [];
+        arr.push(result);
     }
     else if(operator === '-') {
        result = Number(n1) - Number(n2); // '-'버튼을 눌렀을 때
+        arr = [];
+        arr.push(result);
     }
     else if(operator === '*') {
        result = Number(n1) * Number(n2); // '*'버튼을 눌렀을 때
+        arr = [];
+        arr.push(result);
     }
     if(operator === '/') {
        result = Number(n1) / Number(n2); // '/'버튼을 눌렀을 때
+        arr = [];
+        arr.push(result);
     }
     resultNum.innerHTML = result
     
     }
 
 function Enter(){
-    calculate(firstNum,operatorForAdvanced,previousNum);
+    arr.push(previousNum);
+    calculate(arr[0],operatorForAdvanced,arr[arr.length-1]);
 }
