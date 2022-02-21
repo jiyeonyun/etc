@@ -1,40 +1,62 @@
 const resultNum = document.querySelector('.resultNum');
 const ac = document.querySelector('.Ac');
 const enter = document.querySelector('.Enter');
-const number = document.querySelector('.numbers');
+const numbers = document.querySelector('.numbers');
 const operator = document.querySelector('.operator');
-let values = [];
+let firstNum = '';
+let operatorForAdvanced = '';
+let previousKey = '';
+let previousNum = '';
+
+
+
 function allClear(){
     resultNum.innerHTML = '0';
+    firstNum = '';
+    previousNum = '';
+    operatorForAdvanced = '';
+    previousKey = '';
 }
 
-function setNumber(e){
-    if(e.target.className === 'number'){
-        resultNum.innerHTML= (e.target.textContent);
+numbers.addEventListener('click',function(e){
+    const action = e.target.className; 
+    const buttonContent = e.target.textContent; 
+    console.log(action);
+    console.log(buttonContent);
+    if(action === 'number'){
+        if(resultNum.innerHTML === '0' && operatorForAdvanced === ''){
+            resultNum.innerHTML = buttonContent;
+            firstNum = resultNum.innerHTML
+        }
+        else if(resultNum.innerHTML !== '0' && operatorForAdvanced === ''){
+            resultNum.innerHTML = resultNum.innerHTML + buttonContent;
+            firstNum = resultNum.innerHTML
+        }
+        else{//둘다 아닐때
+
+        }
     }
-    else{
-        calculate(operator);
+    if(action === 'operator'){
+        operatorForAdvanced = buttonContent;
+        previousKey = operatorForAdvanced; 
     }
-}
+
+});
+
 
 function calculate(n1, operator, n2) {
     let result = 0;
     if(operator === '+') {
-        result = Number(n1) + Number(n2); 
+      result = Number(n1) + Number(n2); // '+'버튼을 눌렀을 때
     }
     else if(operator === '-') {
-        result = Number(n1) - Number(n2); 
+       result = Number(n1) - Number(n2); // '-'버튼을 눌렀을 때
     }
     else if(operator === '*') {
-       result = Number(n1) * Number(n2);  
+       result = Number(n1) * Number(n2); // '*'버튼을 눌렀을 때
     }
     if(operator === '/') {
-        result = Number(n1) / Number(n2); 
+       result = Number(n1) / Number(n2); // '/'버튼을 눌렀을 때
     }
     return String(result);
     }
-
-ac.addEventListener('click',allClear);
-enter.addEventListener('clcik',calculate);
-number.addEventListener('click',setNumber);
-
