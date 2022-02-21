@@ -82,7 +82,7 @@ function calculate(n1, operator, n2) {
         arr = [];
         arr.push(result);
     }
-    resultNum.innerHTML = result
+    resultNum.innerHTML = result.toLocaleString();
     
     }
 
