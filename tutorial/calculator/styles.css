@@ -15,7 +15,7 @@ button:hover{
 }
 
 .calculator{
-    background-color: #193241;
+    background-color: #729b59;
     width: 400px;
     height: 600px;
     padding: 30px;
@@ -24,7 +24,7 @@ button:hover{
 }
 
 .result{
-    background-color:#de8c86;
+    background-color:#e8ddb1;
     border-radius: 8px;
     margin-bottom: 20px;
     display: flex;
@@ -39,7 +39,7 @@ button:hover{
 
 }
 .calculate{
-    background-color: whitesmoke;
+    background-color: rgb(254, 250, 234);
     border-radius: 8px;
     height: 400px;
 }
@@ -50,12 +50,13 @@ button:hover{
     padding: 20px;
 }
 .controlr{
-    background-color:#de8c86;
+    background-color:#342409;
     width: 140px;
     height: 50px;
     border-radius: 5px;
     font-size: 14px;
     font-weight: bold;
+    color: white;
 }
 
 .numbers{
