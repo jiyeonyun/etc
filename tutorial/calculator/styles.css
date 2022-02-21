@@ -74,7 +74,7 @@ button:hover{
     font-weight: bold;
     pointer-events:all;
 } 
-.zero{
+#zero{
     width: 120px !important
 }
 .numbers .operator{
