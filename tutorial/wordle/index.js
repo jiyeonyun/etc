@@ -1,4 +1,4 @@
-const answers =['apple','happy','house','maple','bread','knife','basic','beach','clock','count','cover','cross','fresh','frame','grade','learn','horse','heart','lunch','magic','movie','place','photo','plane','plant','start','sweet','title','today','total','under','young','white','while','write','stone','sound','sorry','small','sleep','prize'];
+const answers =['apple','happy','house','maple','bread','knife','basic','beach','clock','count','cover','cross','fresh','frame','grade','learn','horse','heart','lunch','magic','movie','place','photo','plane','plant','start','sweet','title','today','total','under','young','white','while','write','stone','sound','sorry','small','sleep','prize','radio','bacon','liver','grape','lemon','mango','melon','peach','trout','onion','chips','olive','cream','plain','yeast','honey','pasta','pizza',''];
 const EnterBtn = document.querySelector('button');
 const modalTitle = document.querySelector('.modal_title');
 const modal = document.querySelector('.modal');
@@ -81,11 +81,11 @@ function answerCheck(){
             }
         
             const template = `<div>
-            <input type="text" id="n1" maxlength="1" class="answer">
-            <input type="text" id="n2" maxlength="1" class="answer">
-            <input type="text" id="n3" maxlength="1" class="answer">
-            <input type="text" id="n4" maxlength="1" class="answer">
-            <input type="text" id="n5" maxlength="1" class="answer">
+            <input type="text" id="n1" maxlength="1" class="answer" autocomplete="off">
+            <input type="text" id="n2" maxlength="1" class="answer" autocomplete="off">
+            <input type="text" id="n3" maxlength="1" class="answer" autocomplete="off">
+            <input type="text" id="n4" maxlength="1" class="answer" autocomplete="off">
+            <input type="text" id="n5" maxlength="1" class="answer" autocomplete="off">
             </div>`;
             document.querySelector('.game').insertAdjacentHTML('beforeend',template);
             
@@ -100,6 +100,7 @@ function answerCheck(){
         resultModalResult.innerText = `   you lose 👻
         answer is "${answer}"!!`
     }
+    
 }
 
 
@@ -107,3 +108,7 @@ EnterBtn.addEventListener('click',answerCheck);
 modalTitle.addEventListener('click',play);
 resultmodalTitle.addEventListener('click',reload)
 keyboard.addEventListener('click',changeColor);
+
+
+//ㅇㅔㄴ터치면 전송할것
+//자동포커스 구현할것 22.02.27
