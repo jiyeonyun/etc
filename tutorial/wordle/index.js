@@ -1,4 +1,4 @@
-const answers =['apple','happy','house','maple'];
+const answers =['apple','happy','house','maple','bread','knife','basic','beach','clock','count','cover','cross','fresh','frame','grade','learn','horse','heart','lunch','magic','movie','place','photo','plane','plant','start','sweet','title','today','total','under','young','white','while','write','stone','sound','sorry','small','sleep','prize'];
 const EnterBtn = document.querySelector('button');
 const modalTitle = document.querySelector('.modal_title');
 const modal = document.querySelector('.modal');
@@ -79,7 +79,8 @@ function answerCheck(){
     else{
         game.setAttribute('class','game hide');
         resultModal.setAttribute('class','result_modal');
-        resultModalResult.innerText = `you lose 👻`
+        resultModalResult.innerText = `   you lose 👻
+        answer is "${answer}"!!`
     }
 }
 
