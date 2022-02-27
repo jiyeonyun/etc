@@ -1,0 +1,71 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+input{
+    width: 50px;
+    height: 50px;
+    font-size: 40px;
+    text-align: center;
+}
+
+.wrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+}
+.hide{
+    display: none !important;
+}
+.modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.playModal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: beige;
+    width: 400px;
+    height: 200px;
+}
+.modal_title{
+    text-align: center;
+    font-size: 42px;
+    cursor: pointer;
+}
+.modal_title:hover{
+    transform: scale(1.1);
+}
+.game{
+    width: 350px;
+    height: 350px;
+    padding-left: 40px;
+}
+.game_title{
+    display: block;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.result_modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: beige;
+    flex-direction: column;
+    width: 400px;
+    height: 200px;
+}
+.resultmodal_title{
+    text-align: center;
+    font-size: 42px;
+    cursor: pointer;
+}
+.resultmodal_title:hover{
+    transform: scale(1.1);
+}
