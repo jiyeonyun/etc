@@ -52,13 +52,13 @@ function answerCheck(){
                 nullModal.setAttribute('class','.null_modal hide');
             for(let i = 0; i < 5; i++){
                 if(input[i].value == answer[i]){
-                    input[i].style.background = 'green';
+                    input[i].style.background = 'rgb(150 227 0)';
                 }
                 else if(answer.includes(input[i].value)){
-                    input[i].style.background = 'yellow';
+                    input[i].style.background = 'rgb(255 207 34)';
                 }
                 else{
-                    input[i].style.background = 'red';
+                    input[i].style.background = '#ff3b00';
                 }
                 input[i].classList.remove('answer');
             }
