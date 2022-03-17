@@ -1,8 +1,13 @@
-import './app.css';
+import styles from './app.module.css';
+import Header from './components/header/header';
+import TaskTracker from './components/task_tracker/task_tracker';
 
 function App() {
   return (
-    <h1>hello</h1>
+    <div className={styles.wrap}>
+    <TaskTracker/>
+    </div>
+    
   );
 }
 
