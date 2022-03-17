@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
 }
+/*nav*/
 .nav{
     display: flex;
 }
@@ -30,4 +31,67 @@
 }
 .setting:hover{
     transform: scale(1.1);
+}
+
+/*timer*/
+.timer{
+    flex-direction: column;
+    margin-top: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f4f4;
+    border-radius: 5em;
+    height: 20em
+}
+.timerNav{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+}
+.timerBtn{
+    background-color: #eaeaea;
+    box-sizing: border-box;
+    padding: 0.3em;
+    width: 5em;
+    text-align: center;
+    border-radius: 20em;
+    color: #999;
+}
+.logo{
+    margin-right: 0.5em;
+}
+.timerTimes{
+    color: rgb(91, 91, 91);
+    font-weight: bold;
+}
+.timerClockNum{
+    font-size: 4em;
+    color: rgb(91, 91, 91);
+}
+.PlayBtn{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.forword_back{
+    font-size: 2em;
+    color: rgb(153, 153, 153);
+    cursor: pointer;
+}
+.forword_back:hover{
+    transform: scale(1.1);
+    color: rgb(190, 190, 190);
+}
+.Play{
+    font-size: 3em;
+    color: rgb(153, 153, 153);
+    cursor: pointer;
+}
+.Play:hover{
+    transform: scale(1.1);
+    color: rgb(190, 190, 190);
 }
