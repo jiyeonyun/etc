@@ -1,0 +1,22 @@
+.trackers{
+    list-style: none;
+    width: 21em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.habitName{
+    font-size: 1.2rem;
+}
+.button{
+    outline: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: 1em;
+}
+.button:hover{
+    transform: scale(1.1);
+    color: #999;
+}
