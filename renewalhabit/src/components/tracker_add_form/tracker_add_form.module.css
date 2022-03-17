@@ -1,0 +1,21 @@
+.addForm{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25em;
+    box-sizing: border-box;
+    padding: 1em;
+}
+.addInput{
+    height: 2.5em;
+    width: 85%;
+    outline: none;
+    border: none;
+}
+.addBtn{
+    margin: 0;
+    height: 2.5em;
+    border: none;
+    cursor: pointer;
+    background-color: rgba(82, 82, 82, 0.242);
+}
