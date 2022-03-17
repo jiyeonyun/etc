@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './header.module.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { fabicycle } from "@fortawesome/free-solid-svg-icons";
 const Header = (props) => {
 
     return(
