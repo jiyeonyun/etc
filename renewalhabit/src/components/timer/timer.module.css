@@ -1,0 +1,33 @@
+.timerWrap{
+    display: flex;
+    flex-direction: column;
+}
+.nav{
+    display: flex;
+}
+.navdetail{
+    display: flex;
+    margin-right: 1em;
+    align-items: center;
+    font-size: 0.8em;
+}
+.navBtn{
+    box-sizing: border-box;
+    padding: 0.4em;
+    margin-right: 0.5em;
+    border: 1.5px solid #999;
+    border-radius: 30em;
+    color: rgb(113, 113, 113);
+}
+.navDesc{
+    font-size: 1.4em;
+    color: rgb(113, 113, 113);
+}
+.setting{
+    font-size: 1.4em;
+    color: rgb(113, 113, 113);
+    cursor: pointer;
+}
+.setting:hover{
+    transform: scale(1.1);
+}
