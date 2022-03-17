@@ -1,11 +1,10 @@
 import styles from './app.module.css';
-import Header from './components/header/header';
-import TaskTracker from './components/task_tracker/task_tracker';
+import TrackerCycle from './components/tracker_cycle/tracker_cycle';
 
 function App() {
   return (
     <div className={styles.wrap}>
-    <TaskTracker/>
+    <TrackerCycle/>
     </div>
     
   );
