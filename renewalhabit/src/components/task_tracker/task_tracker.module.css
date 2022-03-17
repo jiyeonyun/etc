@@ -1,5 +1,5 @@
 .task_tracker{
-    width: 90%;
+    width: 98%;
     background-color:rgb(255, 255, 253);
     height: 100%;
     border-radius:3em;
@@ -7,6 +7,7 @@
     padding: 1em;
 }
 .task_trackers{
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
