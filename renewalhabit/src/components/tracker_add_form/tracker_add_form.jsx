@@ -3,15 +3,15 @@ import styles from './tracker_add_form.module.css';
 
 const TrackerAddForm = (props) => {
     const inputRef = React.createRef();
-    const onSubmit = (event) =>{
+    const sendName = (event) =>{
         event.preventDefault(); 
         const name = inputRef.current.value;
-        name && props.onAdd(name);
+        name && props.onSubmit(name);
         inputRef.current.value = '';
     }
 
     return (
-        <form className={styles.addForm} onSubmit={onSubmit}>
+        <form className={styles.addForm} onSubmit={sendName}>
             <input 
                 ref={inputRef} 
                 className={styles.addInput}
