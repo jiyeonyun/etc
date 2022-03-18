@@ -5,6 +5,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    margin-top: 1.2rem;
 }
 .habitName{
     font-size: 1.2rem;
@@ -19,4 +20,8 @@
 .button:hover{
     transform: scale(1.1);
     color: #999;
+}
+.clear{
+    font-size: 1.2rem;
+    text-decoration: line-through;
 }
