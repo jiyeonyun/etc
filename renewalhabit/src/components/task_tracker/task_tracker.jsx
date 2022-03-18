@@ -18,11 +18,9 @@ const TaskTracker = (props) => {
                     :<FontAwesomeIcon onClick={onClick} className={styles.titleIcon} icon="fa-solid fa-circle-arrow-up" />
             }
             </div>
-            {
-                !full?  <div className={styles.tracker}>
-                            <Trackers/>
-                        </div>  : <></>
-            }
+                <div className={`${!full? styles.tracker : styles.none}`}>
+                    <Trackers/>
+                </div> 
         </div>
     );
 };
