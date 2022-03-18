@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './task_tracker.module.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from 'react';
-import TrackerAddForm from '../tracker_add_form/tracker_add_form';
 import Trackers from '../trackers/trackers';
 
 const TaskTracker = (props) => {
@@ -21,7 +20,6 @@ const TaskTracker = (props) => {
             </div>
             {
                 !full?  <div className={styles.tracker}>
-                            <TrackerAddForm/>
                             <Trackers/>
                         </div>  : <></>
             }

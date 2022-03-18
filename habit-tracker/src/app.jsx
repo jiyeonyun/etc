@@ -40,7 +40,6 @@ class App extends Component {
       handleDelete = (habit) => {
         const habits = this.state.habits.filter(item=>item.id !== habit.id);
         this.setState({habits});
-        
       };
 
       handleAdd = name =>{
