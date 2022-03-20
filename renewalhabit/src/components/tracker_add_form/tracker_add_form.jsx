@@ -6,7 +6,9 @@ const TrackerAddForm = (props) => {
     const sendName = (event) =>{
         event.preventDefault(); 
         const name = inputRef.current.value;
-        name && props.onSubmit(name);
+        const checked = false;
+        const edit = false;
+        name && props.onSubmit(name,checked,edit);
         inputRef.current.value = '';
     }
 
