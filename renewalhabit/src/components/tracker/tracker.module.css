@@ -25,3 +25,11 @@
     font-size: 1.2rem;
     text-decoration: line-through;
 }
+.edited{
+    outline: none;
+    border:none;
+    font-size: 1.2rem;
+}
+.greenCheck{
+    color: green;
+}
