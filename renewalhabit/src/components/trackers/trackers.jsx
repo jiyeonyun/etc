@@ -35,10 +35,10 @@ const Trackers = (props) => {
             ),
         );
     };
-    const onSubmitClicked = (trakcer)=>{
+    const onSubmitClicked = (trakcer,name)=>{
         setTracker(
             tracker.map((item) =>
-            item.id === trakcer.id ? { ...item, name: !item.checked } : item,
+            item.id === trakcer.id ? { ...item, name: name , edit: !item.edit} : item,
             ),
         );
     }

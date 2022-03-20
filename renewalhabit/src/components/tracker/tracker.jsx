@@ -9,7 +9,6 @@ const Tracker = ({trackerName,onDelete,trakcer,edit,onEdit,onCheck,checked,onSub
     }
     const onEditClick = (e)=>{
         onEdit(trakcer);
-        onSubmitClick(e)
     }
     const onCheckClick = ()=>{
         onCheck(trakcer); 
@@ -31,6 +30,7 @@ const Tracker = ({trackerName,onDelete,trakcer,edit,onEdit,onCheck,checked,onSub
             edit? <form onSubmit={onSubmitClick}><input ref={inputRef} type="text" defaultValue={trackerName} className={styles.edited}/></form>:<span className={`${checked?styles.clear:styles.habitName}`}>{trackerName}</span>
         }
         <div className={styles.buttons}>
+            {edit?<span className={styles.editDesc}>edit and Enter</span>:<></>}
             <button className={styles.button} onClick={onEditClick} >
                 {
                     edit ?<FontAwesomeIcon icon="fa-solid fa-circle-check"/> 
