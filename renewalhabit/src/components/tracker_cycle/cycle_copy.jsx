@@ -6,22 +6,47 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState,useRef } from 'react';
 import TimerCopy from '../timer/timer_copy';
 import { useEffect } from 'react';
+import useInterval from '../../useInterval';
+
+const padNumber = (num, length) => {
+    return String(num).padStart(length, '0');
+};
+
 const CycleCopy = ({popup,setPopup}) => {
+        const [play,setPlay] = useState(true);
         const [focus,setFocus] =useState(true);
         const [focusHr,setFocusHr] = useState(0);
         const [focusMin,setFocusMin] = useState(0);
         const [BreakHr,setBreakHr] = useState(0);
         const [BreakMin,setBreakMin] = useState(0);
         const [cylceTime,setCycleTime] = useState(0);
-        
-        const hour = focus ? focusHr : BreakHr;
-        const min = focus? 1 : BreakMin;
-        const sec = 0;
+        const [cylce,setCycle] = useState(-1);
 
+        const [hour,setHour] = useState(0);
+        const [min,setMin] = useState(0);
+        const [sec,setSec] = useState(0);
+
+        const tempHour = hour ? parseInt(hour) : 0;
+        const tempMin = min ? parseInt(min) : 0;
+        const tempSec = sec ? parseInt(sec) : 0;
+
+        let initialTime = tempHour * 60 * 60 + tempMin * 60 + tempSec;
+        let timer
+
+        const countDown =()=>{
+                initialTime -= 1;
+                setSec(padNumber(initialTime % 60, 2));
+                setMin(padNumber(parseInt(initialTime / 60, 2)));
+                setHour(padNumber(parseInt(initialTime / 60 / 60), 2));
+        };
+        
+
+        const timerStart=()=>{
+            timer = setInterval(countDown,1000);
+        }
         const onClick = ()=>{
             setPopup(!popup);
         }
-
         const onOk = ()=>{
             setPopup(!popup);      
             setFocusHr(studyHourRef.current.value);
@@ -30,7 +55,20 @@ const CycleCopy = ({popup,setPopup}) => {
             setBreakMin(breakMinRef.current.value);
             setCycleTime(cycleRef.current.value);
         }
-        
+
+        useEffect(()=>{
+            setHour(focus ? focusHr : BreakHr);
+            setMin(focus? focusMin : BreakMin);
+            setSec(3);
+        },[popup]);
+
+        useEffect(()=>{
+            if(initialTime==0){
+                clearInterval(timer);
+                setCycle(cylce+1);
+            }
+        },[sec])
+
         const studyHourRef = useRef();
         const studyMinRef = useRef();
         const breakHourRef = useRef();
@@ -67,8 +105,9 @@ const CycleCopy = ({popup,setPopup}) => {
                     </ul>
                     <button className={styles.popupButton} onClick={onOk}>OK</button>
                 </div>
-                <TimerCopy popup={popup} setPopup={setPopup} focusHr={focusHr} focusMin={focusMin} focus={focus} setFocus={setFocus}
-                BreakHr={BreakHr} BreakMin={BreakMin} cylceTime={cylceTime} hour={hour} min={min} sec={sec}
+                <TimerCopy popup={popup} setPopup={setPopup} focusHr={focusHr} focusMin={focusMin} focus={focus} setFocus={setFocus} cylce={cylce}
+                BreakHr={BreakHr} BreakMin={BreakMin} cylceTime={cylceTime} hour={hour} min={min} sec={sec} play={play} setPlay={setPlay}
+                timerStart={timerStart}
                 />
                 <TaskTracker/>
             </div>
