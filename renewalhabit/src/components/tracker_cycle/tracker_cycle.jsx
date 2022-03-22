@@ -77,7 +77,6 @@ const TrackerCycle = ({popup,setPopup,finish,setFinish}) => {
     
     useEffect(() => {
             if (initialTime <= 0) {
-                console.log(initialTime);
                 clearInterval(interval.current);
                 setPlayBtn(!playBtn);
                 setFocus(!focus);
