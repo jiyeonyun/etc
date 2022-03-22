@@ -83,3 +83,14 @@
     margin-top: 0.8rem;
     margin-bottom: 0.8rem;
 }
+.finish{
+    border: 0.3em solid rgb(82, 82, 82);
+    box-sizing: border-box;
+    padding: 3em;
+    background-color: white;
+    z-index: 100;
+    position: absolute;
+    border-radius: 2em;
+    display: flex;
+    flex-direction: column;
+}
