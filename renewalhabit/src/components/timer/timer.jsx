@@ -35,7 +35,7 @@ const Timer = (props) => {
                 <span className={styles.navDesc}>{`${props.BreakHr?props.BreakHr:0} hr ${props.BreakMin?props.BreakMin:0} min`}</span>
             </div>
             <div className={styles.navdetail}>
-                <span className={styles.navBtn}>Cylces</span>
+                <span className={styles.navBtn}>Cycles</span>
                 <span className={styles.navDesc}>{`${props.cylceTime?props.cylceTime:0}`}</span>
             </div>
             <div className={styles.navdetail}>

@@ -7,7 +7,7 @@ const Header = ({popup}) => {
         <header className={`${popup?styles.headerPopup:styles.header}`}>
             <div className={styles.headerWrap}>
             <FontAwesomeIcon className={styles.logo} icon="fa-solid fa-bicycle" />
-            <h1 className={styles.title}>Tracker Cylcle</h1>
+            <h1 className={styles.title}>Tracker Cycle</h1>
             </div>
         </header>
     );
