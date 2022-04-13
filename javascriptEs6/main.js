@@ -4,15 +4,15 @@
 
 //Q. sayHi()라는 함수를 어디서 어떻게 만들면 될까요? 
 
-var 사람 = {
-    name: '손흥민',
-    sayHi: () => {
-        console.log(`안녕 나는 ${사람.name}`);
-    }
-  }
+// var 사람 = {
+//     name: '손흥민',
+//     sayHi: () => {
+//         console.log(`안녕 나는 ${사람.name}`);
+//     }
+//   }
   
 
-  사람.sayHi(); //안녕 나는 손흥민 
+  // 사람.sayHi(); //안녕 나는 손흥민 
 
 //위처럼 자료.전부더하기()라고 쓰면 자료.data 안에 있는 모든 숫자를 더해서 콘솔창에 출력해주어야합니다. 
 
@@ -50,12 +50,34 @@ var pants = 0;
 var socks = 100;
 `바지${pants} 양말${socks}`;
 
-  function 해체분석기(문자,변수,변수2){
-    if(pants == 0){
-      console.log(문자[0]+'다팔렸어요'+문자[1]+변수2);
-    }
-    else{
-      console.log(문자[0]+변수+문자[1]+변수2);
-    }
-  };
-  해체분석기`바지${pants} 양말${socks}`;
+  // function 해체분석기(문자,변수,변수2){
+  //   if(pants == 0){
+  //     console.log(문자[0]+'다팔렸어요'+문자[1]+변수2);
+  //   }
+  //   else{
+  //     console.log(문자[0]+변수+문자[1]+변수2);
+  //   }
+  // };
+  // 해체분석기`바지${pants} 양말${socks}`;
+
+  function getFinalString(s) {
+    // Write your code here
+    
+  }
+  // console.log(getFinalString('GAWSREDWAWS'));
+
+  function longestChain(words) {
+    // Write your code here
+
+}
+
+function maxLength(a, k) {
+  // Write your code here
+  const newArr = [];
+  for(let i = 0 ; i<a.length ; i++){
+      newArr.push(a[i]);
+  }
+  
+}
+
+console.log(maxLength([1,2,3],3));

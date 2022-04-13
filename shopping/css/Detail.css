@@ -1,0 +1,40 @@
+.red {
+  color: #ff0000;
+}
+
+.my-alert p, .my-alert2 p {
+  margin: 0;
+}
+
+.my-alert, .my-alert2 {
+  background-color: rgba(240, 95, 95, 0.297);
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.my-alert2 {
+  background-color: #f05933;
+}
+
+.wow-enter {
+  opacity: 0;
+}
+
+.wow-enter-active {
+  opacity: 1;
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+}
+
+.wrapRecent {
+  margin-top: 40px;
+}
+
+.colwrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
