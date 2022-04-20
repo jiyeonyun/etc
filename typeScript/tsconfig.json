@@ -3,6 +3,6 @@
         "target": "ES6",
         "module": "commonjs",
         // "noImplicitAny": true,
-        // "strictNullChecks": true
+        "strictNullChecks": true
     }
 }
