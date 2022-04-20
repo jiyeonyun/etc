@@ -16,6 +16,7 @@ var 자료 = {
     name: 'kim'
 }; // 이 오브젝트 자료를 만들때 타입지정을 리터럴지정 알아서 해주세요
 //효과: object value값을 그대로 타입으로 지정해줌
+// object 속성들에 모두 readonly 붙여줌
 function 내함수(a) {
 }
 //literal type의 문제점

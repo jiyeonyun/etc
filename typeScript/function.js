@@ -46,3 +46,21 @@ function 가능한(월소득, 집, 매력) {
     }
 }
 console.log(가능한(100, true, '상'));
+let 함수333 = function () {
+    return 10;
+};
+let cutZero = function (a) {
+    let result = a.substring(0, 1);
+    return result;
+};
+let removeDash = function (a) {
+    if (a.includes('-')) {
+        a.replace(/\-/g, '');
+    }
+    return parseInt(a);
+};
+function 만들함수(a, func1, func2) {
+    let result = func1(a);
+    let result2 = func2(result);
+    console.log(result2);
+}

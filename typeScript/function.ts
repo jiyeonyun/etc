@@ -53,3 +53,40 @@ function 가능한(월소득:number,집:boolean,매력:string){
     
 }
 console.log(가능한(100,true,'상')) 
+
+//type alias에 함수타입 저장해서 쓰는법
+type 함수타입 = (a:string) => number;
+
+
+let 함수333  :함수타입  = function(){
+    return 10;
+}
+//함수 type alias부착하려면 함수 표현식 써야함
+
+type 회원정보  ={
+    name: 'kim',
+    plusOne : (a:number) => number,
+    changeName: ()=> void
+}
+type CutzeroType = (a:string) => string;
+
+let cutZero : CutzeroType = function(a){
+        let result =   a.substring(0,1);
+    return result;
+}
+
+type removeType = (a:string) => number;
+
+
+let removeDash :removeType = function(a){
+    if(a.includes('-')){
+        a.replace(/\-/g,'');
+    }
+    return parseInt(a);
+}
+
+function 만들함수(a:string , func1 ,func2){
+    let result = func1(a)
+    let result2 = func2(result);
+    console.log(result2);
+}
