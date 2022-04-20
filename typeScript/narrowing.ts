@@ -1,3 +1,5 @@
+import { type } from '@testing-library/user-event/dist/type';
+
 function 내함수(x:number|string){
     let array : number[] = [];
     if(typeof x === 'string'){
@@ -48,3 +50,37 @@ function subjec(x:{subject:(string[]|string)}){
     }
 }
 console.log(subjec(철수쌤));
+
+type Animal = string|number|undefined;
+
+let 동물 :Animal;
+type Animal1Type = {name:string,age:number} //영어 대문자 국룰임, 뒤에 타입 붙이는식으로 작명
+let 동물1 : Animal1Type;
+
+type Girfriend = {
+    readonly name: string
+    //name? :string => ?는 선택사항임 사실상 string|undefined의 뜻
+}
+//readonly 읽기전용 수정안됨
+
+const 여자친구 : Girfriend ={
+    name: 'hellp'
+};
+type Name = string;
+type Age = Number;
+
+type Person = Name | Age;
+
+type PositionX = {x: number};
+type PositionY = {y: number};
+
+type NewType = PositionX & PositionY; //
+let position:NewType ={ x : 10 , y : 20 }
+
+//숙제
+
+type Hi = {color: string , size:number, readonly position:number[]};
+
+type info = {name: string ,phone : number, email:string}
+
+type info2 = info & {adult:boolean};

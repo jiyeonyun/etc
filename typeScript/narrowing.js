@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 function 내함수(x) {
     let array = [];
     if (typeof x === 'string') {
@@ -30,11 +32,21 @@ function clean(x) {
     }
 }
 function subjec(x) {
-    if (Array.isArray(x)) {
-        return x[x.length - 1];
+    if (Array.isArray(x.subject)) {
+        return x.subject[x.subject.length - 1];
     }
-    else if (typeof x === 'string') {
-        return x;
+    else if (typeof x.subject === 'string') {
+        return x.subject;
+    }
+    else {
+        return '없어';
     }
 }
 console.log(subjec(철수쌤));
+let 동물;
+let 동물1;
+//readonly 읽기전용 수정안됨
+const 여자친구 = {
+    name: 'hellp'
+};
+let position = { x: 10, y: 20 };
