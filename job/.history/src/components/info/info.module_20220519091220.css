@@ -1,0 +1,50 @@
+.scrollContainer {
+  position: relative;
+  height: 180vh;
+}
+.scroll2 {
+  position: relative;
+  height: 180vh;
+}
+.stickyCopy {
+  position: sticky;
+  display: flex;
+  top: 0;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+}
+.title {
+  font-size: 50px;
+}
+.copyFirst,
+.copySecond {
+  position: absolute;
+  padding: 0 30px;
+  box-sizing: border-box;
+  width: 100%;
+  pointer-events: none;
+  transform: translate(0px, 0px);
+  opacity: 1;
+}
+.addSecond {
+  position: absolute;
+  padding: 0 30px;
+  box-sizing: border-box;
+  width: 100%;
+  pointer-events: none;
+  transform: translate(0px, 171px);
+  opacity: 0;
+}
+.addFirst {
+  position: absolute;
+  padding: 0 30px;
+  box-sizing: border-box;
+  width: 100%;
+  pointer-events: none;
+  transform: translate(0px, -171px);
+  opacity: 0;
+}
